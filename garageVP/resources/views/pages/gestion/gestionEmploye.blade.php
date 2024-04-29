@@ -3,11 +3,13 @@
 @section('contenu')
     <h1 class="text-primary text-center">Gestion du personnel</h1>
 
-    @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
+    <div class="p-4">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+    </div>
 
     <div class="container">
         <div class="col-xl">

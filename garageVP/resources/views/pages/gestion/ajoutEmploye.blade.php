@@ -50,8 +50,8 @@
                 <div class="mt-3">
                     <label for="role" class="form-label">Choix des droits</label>
                     <select id="role" class="form-select" aria-label="Default select example" name="role" value="{{ old('role') }}">
-                        <option value="1">Employe</option>
-                        <option value="2">Admin</option>
+                        <option value="employe">Employe</option>
+                        <option value="admin">Admin</option>
 
                     </select>
                     @error('role')
