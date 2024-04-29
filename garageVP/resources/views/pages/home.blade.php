@@ -23,7 +23,7 @@
                 <h3>Vente de voiture d'occasion</h3>
             </div>
 
-            <div>
+            <div class="p-4">
                 <table class="table table-striped" id="tablCom">
                     <caption class="caption">Les dix derniers commentaires</caption>
                     <tbody>
@@ -41,11 +41,14 @@
                         </tr>
                     </tbody>
                 </table>
+                </div">
+                <div class="p-4">
+                    <a href="/commentaire" class="btn btn-primary p-4">Laissez-nous votre témoignage, impression ou
+                        commentaire</a>
+                    <a href="/allCommentaires" class="btn btn-primary p-4 pos">Afficher tous les commentaires</a>
+                </div>
+                <br><br><br><br>
             </div>
-            <a href="/commentaire">Laissez-nous votre témoignage, impression ou commentaire</a> <br><br>
-            <a href="/allCommentaires">Afficher tous les commentaires</a>
 
         </div>
-
-    </div>
-@endsection
+    @endsection

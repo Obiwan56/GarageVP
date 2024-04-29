@@ -33,10 +33,10 @@
                                             class="badge">3</span></a></li>
                                 <li><a class="dropdown-item" href="#">Gestion message</a></li>
                                 <li><a class="dropdown-item" href="/monCompte">Gestion mon compte</a></li>
-                                <li data-voir="admin">
+                                <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li data-voir="admin"><a class="dropdown-item" href="/gestionEmploye">Gestion
+                                <li><a class="dropdown-item" href="/gestionEmploye">Gestion
                                         employé</a></li>
                             </ul>
                         </li>
@@ -64,7 +64,7 @@
         </nav>
     </header>
 
-    <div class="p-4">
+    <div>
         @yield('contenu')
     </div>
 

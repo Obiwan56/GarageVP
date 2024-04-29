@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,15 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
+Route::get('/ajoutEmploye', [UserController::class, 'formUser']);
+Route::post('/ajoutEmploye', [UserController::class, 'creerEmploye']);
+
+Route::get('/gestionEmploye', [UserController::class, 'listeEmploye']);
+
+Route::get('/modifEmploye/{id}', [UserController::class, 'modifEmploye']);
+Route::post('/modifEmploye/{id}', [UserController::class, 'modifUser']);
+
+Route::get('/effacerEmploye/{id}', [UserController::class, 'effacerEmploye']);
 
 
 

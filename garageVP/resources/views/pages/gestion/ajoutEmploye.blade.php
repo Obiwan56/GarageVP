@@ -10,7 +10,7 @@
 
             <div class="mb-3">
                 <label for="name" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="name" name="name">
+                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
             </div>
             @error('name')
                 <span class="text-danger">
@@ -19,7 +19,7 @@
 
             <div class="mb-3">
                 <label for="prenom" class="form-label">Prénom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom">
+                <input type="text" class="form-control" id="prenom" name="prenom" value="{{ old('prenom') }}">
             </div>
             @error('prenom')
                 <span class="text-danger">
@@ -28,7 +28,7 @@
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email">
+                <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
             </div>
             @error('email')
                 <span class="text-danger">
@@ -49,7 +49,7 @@
 
                 <div class="mt-3">
                     <label for="role" class="form-label">Choix des droits</label>
-                    <select id="role" class="form-select" aria-label="Default select example" name="role">
+                    <select id="role" class="form-select" aria-label="Default select example" name="role" value="{{ old('role') }}">
                         <option value="1">Employe</option>
                         <option value="2">Admin</option>
 
