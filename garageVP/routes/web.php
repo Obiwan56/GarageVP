@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnnonceController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/ajoutAnnonce', [AnnonceController::class, 'formCreerAnnonce']);
 });
 
+Route::get('/deconnexion', [UserController::class, 'deconnexion']);
+
+Route::get('reset-password', [ResetPasswordController::class, 'showResetForm'])->name('reset-password');
 
 
 

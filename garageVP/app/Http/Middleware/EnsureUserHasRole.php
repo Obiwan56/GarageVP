@@ -19,6 +19,6 @@ class EnsureUserHasRole
         if ($request->user()->role === $role)
             return $next($request);
 
-        return abort(403);
+        return back()->with('message', "Vous n'avez pas les droits pour accéder à cette page");
     }
 }

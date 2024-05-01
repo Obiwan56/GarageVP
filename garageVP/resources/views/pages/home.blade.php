@@ -7,6 +7,12 @@
         </div>
     </div>
 
+    @if (session('message'))
+    <div class="alert alert-danger m-4">
+        {{ session('message') }}
+    </div>
+@endif
+
     <div class="col p-3 container text-center ">
         <h2 class="text-primary text-center">Nos Prestations</h2>
         <div class="position-relative p-6 col">

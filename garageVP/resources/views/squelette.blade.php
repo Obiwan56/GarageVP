@@ -21,41 +21,78 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+                    <ul class="navbar-nav">
+                        @auth
+                            <li class="nav-item">
+                                <span class="nav-link dropdown-toggle text-success" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->prenom }}</span>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/deconnexion">Déconnexion</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('reset-password') }}">Modification mdp</a></li>
+                                </ul>
+                            </li>
+
+                        @endauth
+                    </ul>
+
+
+
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown"><!--chemin vers la boite mail-->
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Gestion<span class="badge">3</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/gestionAnnonce">Gestion annonce</a></li>
-                                <li><a class="dropdown-item" href="/gestionCommentaire">Gestion commentaire<span
-                                            class="badge">3</span></a></li>
-                                <li><a class="dropdown-item" href="#">Gestion message</a></li>
-                                <li><a class="dropdown-item" href="/monCompte">Gestion mon compte</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="/gestionEmploye">Gestion
-                                        employé</a></li>
-                            </ul>
-                        </li>
+
+
+                        @auth
+                            <li class="nav-item dropdown"><!--chemin vers la boite mail-->
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Gestion
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/gestionAnnonce">Gestion annonce</a></li>
+                                    <li><a class="dropdown-item" href="/gestionCommentaire">Gestion commentaire<span
+                                                class="badge">3</span></a></li>
+                                    <li><a class="dropdown-item" href="#">Gestion message</a></li>
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="/gestionEmploye">Gestion
+                                            employé</a></li>
+
+
+                                </ul>
+                            </li>
+                        @endauth
+
+
                         <li class="nav-item">
                             <a class="nav-link" href="/">Accueil</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="/presentation">Présentation</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="/prestation">Prestations</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="/occasion">Occasions</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
 
+
+
+                        <li class="nav-item">
+                            <!-- Afficher le bouton de connexion uniquement si l'utilisateur n'est pas connecté -->
+                            @guest
+                                <a class="nav-link" href="{{ route('login') }}">Connexion</a>
+                            @endguest
+                        </li>
 
 
                     </ul>

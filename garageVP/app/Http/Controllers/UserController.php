@@ -62,4 +62,12 @@ class UserController extends Controller
 
         return redirect('/gestionEmploye')->with('status', 'Employé(e) supprimé avec succès');
     }
+
+    public function deconnexion()
+    {
+        auth()->logout();
+
+        return redirect('/');
+    }
+
 }
