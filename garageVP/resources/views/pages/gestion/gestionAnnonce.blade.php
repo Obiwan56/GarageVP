@@ -16,48 +16,51 @@
             <table class="table table-striped" id="tablCom">
                 <caption class="caption">Liste des annonces</caption>
                 <tbody>
-                    <tr>
-                        <th scope="row">#1</th>
-                        <td>Renault</td>
-                        <td>Clio 5 hdi</td>
-                        <td>2020</td>
-                        <td>120000</td>
-                        <td>17000</td>
-                        <td><i data-bs-toggle="modal" data-bs-target="#deleteEmploye" class="bi bi-trash"></i>
-                            <a href="/modifAnnonce"><i class="bi bi-pencil-square"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">#1</th>
-                        <td>Renault</td>
-                        <td>Clio 5 hdi</td>
-                        <td>2020</td>
-                        <td>120000</td>
-                        <td>17000</td>
-                        <td><i data-bs-toggle="modal" data-bs-target="#deleteEmploye" class="bi bi-trash"></i>
-                            <a href="/modifAnnonce"><i class="bi bi-pencil-square"></i></a>
-                        </td>
-                    </tr>
+                    @foreach ($annonces as $annonce)
+                        <tr>
+                            <td>{{ $annonce->marque }}</td>
+                            <td>{{ $annonce->model }}</td>
+                            <td>{{ $annonce->annee }}</td>
+                            <td>{{ $annonce->km }}</td>
+                            <td>{{ $annonce->description }}</td>
+                            <td>{{ $annonce->prix }}</td>
+
+                            <td>
+                                <a href="/modifEmploye/{{ $annonce->id }}" class="btn btn-primary">Modifier</a>
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                    data-bs-target="#idmodal_{{ $annonce->id }}">Supprimer</button>
+                            </td>
+                        </tr>
+
+                        {{-- modal --}}
+                        <div class="modal fade dark" id="idmodal_{{ $annonce->id }}"
+                            aria-labelledby="modal_{{ $annonce->id }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-title">Supprimer</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Etes vous sur de vouloir supprimer cette annonce?</p>
+                                    </div>
+                                    <div class="modal-footer m-4">
+                                        <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                                            aria-label="close">Fermer</button>
+                                        <a href="/effacerAnnonce/{{ $annonce->id }}" class="btn btn-warning">Supprimer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 
-    <div class="modal fade" id="deleteEmploye" tabindex="-1" aria-labelledby="deleteEmployeLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="deleteEmployeLabel">Supprimer</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Etes vous sur de vouloir supprimer cette annonce ?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary">Supprimer</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 @endsection
+
+
+{{-- Faire ajout + modif annonce --}}

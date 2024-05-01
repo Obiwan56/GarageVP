@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnnonceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -19,17 +20,29 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
-Route::get('/ajoutEmploye', [UserController::class, 'formUser']);
-Route::post('/ajoutEmploye', [UserController::class, 'creerEmploye']);
-
-Route::get('/gestionEmploye', [UserController::class, 'listeEmploye']);
-
-Route::get('/modifEmploye/{id}', [UserController::class, 'modifEmploye']);
-Route::post('/modifEmploye/{id}', [UserController::class, 'modifUser']);
-
-Route::get('/effacerEmploye/{id}', [UserController::class, 'effacerEmploye']);
 
 
+
+
+
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/ajoutEmploye', [UserController::class, 'formUser']);
+    Route::post('/ajoutEmploye', [UserController::class, 'creerEmploye']);
+
+    Route::get('/gestionEmploye', [UserController::class, 'listeEmploye']);
+
+    Route::get('/modifEmploye/{id}', [UserController::class, 'modifEmploye']);
+    Route::post('/modifEmploye/{id}', [UserController::class, 'modifUser']);
+
+    Route::get('/effacerEmploye/{id}', [UserController::class, 'effacerEmploye']);
+});
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/gestionAnnonce', [AnnonceController::class, 'listeAnnonce']);
+    Route::post('/ajoutAnnonce', [AnnonceController::class, 'creerAnnonce']);
+    Route::get('/ajoutAnnonce', [AnnonceController::class, 'formCreerAnnonce']);
+});
 
 
 
@@ -47,7 +60,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Auth::routes();
 
