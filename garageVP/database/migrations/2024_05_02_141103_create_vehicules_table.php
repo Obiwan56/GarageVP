@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('annonces', function (Blueprint $table) {
+        Schema::create('vehicules', function (Blueprint $table) {
             $table->id();
             $table->string('marque');
             $table->string('model');
@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('description');
             $table->float('prix');
             $table->string('energie');
+            $table->string('boite');
             $table->string('img1');
             $table->string('img2')->nullable();
             $table->string('img3')->nullable();
@@ -30,6 +31,7 @@ return new class extends Migration
             $table->string('img8')->nullable();
             $table->string('img9')->nullable();
             $table->string('img10')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -38,6 +40,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('annonces');
+        Schema::dropIfExists('vehicules');
     }
 };

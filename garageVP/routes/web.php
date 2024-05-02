@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\AnnonceController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VehiculeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,10 +23,6 @@ Route::get('/', function () {
 
 
 
-
-
-
-
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/ajoutEmploye', [UserController::class, 'formUser']);
     Route::post('/ajoutEmploye', [UserController::class, 'creerEmploye']);
@@ -40,9 +36,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 });
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/gestionAnnonce', [AnnonceController::class, 'listeAnnonce']);
-    Route::post('/ajoutAnnonce', [AnnonceController::class, 'creerAnnonce']);
-    Route::get('/ajoutAnnonce', [AnnonceController::class, 'formCreerAnnonce']);
+    Route::get('/gestionAnnonce', [VehiculeController::class, 'listeAnnonce']);
+    Route::get('/ajoutAnnonce', [VehiculeController::class, 'formCreerAnnonce']);
+    Route::post('/ajoutAnnonce', [VehiculeController::class, 'enregistrerAnnonce'])->name('creerAnnonce');
 });
 
 Route::get('/deconnexion', [UserController::class, 'deconnexion']);

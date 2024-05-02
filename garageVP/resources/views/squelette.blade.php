@@ -29,7 +29,8 @@
                                     data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->prenom }}</span>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="/deconnexion">Déconnexion</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('reset-password') }}">Modification mdp</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('reset-password') }}">Modification mdp</a>
+                                    </li>
                                 </ul>
                             </li>
 
@@ -53,11 +54,14 @@
                                                 class="badge">3</span></a></li>
                                     <li><a class="dropdown-item" href="#">Gestion message</a></li>
 
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="/gestionEmploye">Gestion
-                                            employé</a></li>
+                                    @auth
+                                        @if (auth()->user()->role === 'admin')
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="/gestionEmploye">Gestion employé</a></li>
+                                        @endif
+                                    @endauth
 
 
                                 </ul>

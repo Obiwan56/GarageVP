@@ -4,6 +4,14 @@
     <h1 class="text-primary text-center">Gestion des voitures en ventes</h1>
 
     <div class="p-4">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+    </div>
+
+    <div class="p-4">
 
 
 
