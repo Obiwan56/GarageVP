@@ -24,11 +24,11 @@ class AnnonceRequest extends FormRequest
         return [
             'marque' => 'required',
             'model' => 'required',
-            'annee' => 'required|numeric',
-            'km' => 'required|numeric',
+            'annee' => 'required|numeric|digits:4',
+            'km' => 'required|numeric|digits:6',
             'description' => 'required',
             'energie' => 'required',
-            'prix' => 'required',
+            'prix' => 'required|max:11',
             'boite' => 'required',
 
             'img1' => 'required|image|max:2000',  //'nullable|file|max:2000|required|mimes:png,jpg,jpeg'
@@ -53,12 +53,16 @@ class AnnonceRequest extends FormRequest
             'model.required' => 'Le model est requis',
             'annee.required' => "L'année est requise",
             'annee.numeric' => "entrer une année valide",
+            'annee.digits' => "Une année entre 1950 et 2025",
+
             'km.required' => 'Le kilometrage est requis',
+            'km.digits' => 'Trop de kilometre',
             'boite.required' => 'Le type de boîte de vitesse est requise',
             'km.numeric' => 'entrer un kilometrage valide',
             'description.required' => 'La description est requise',
             'energie.required' => "Veuyez choisir un carburant",
             'prix.required' => 'Le prix est requis',
+            'prix.max' => 'Le prix est trop volumineux',
             'img1.required' => 'Une image est requise',
             'img1.image' => 'Seul les images sont acceptés',
             'img1.max' => 'Le fichier est trop lourd, 2mo max',

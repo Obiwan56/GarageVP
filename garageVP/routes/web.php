@@ -49,7 +49,12 @@ Route::get('reset-password', [ResetPasswordController::class, 'showResetForm'])-
 Route::get('/allAnnonce', [VehiculeController::class, 'allAnnonce']);
 
 Route::get('/detailAnnonce/{id}', [VehiculeController::class, 'detail']);
+
+Route::get('/modifAnnonce/{id}', [VehiculeController::class, 'formMofifAnnonce']);
+Route::post('/modifAnnonce/{id}', [VehiculeController::class, 'modifAnnonce']);
+
 Route::get('/effacerAnnonce/{id}', [VehiculeController::class, 'effacerVehicule']);
+
 
 
 

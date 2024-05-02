@@ -1,7 +1,7 @@
 @extends('squelette')
 
 @section('contenu')
-    <form action="{{ route('creerAnnonce') }}" method="post" class="form-group" enctype="multipart/form-data">
+    <form action="" method="post" class="form-group" enctype="multipart/form-data">
 
         @csrf
 
@@ -171,4 +171,3 @@
 @endsection
 
 
-{{-- refaire le formulaire avec un crud fonctionnel --}}

@@ -36,7 +36,7 @@
                             <td>{{ $annonce->prix }}</td>
 
                             <td>
-                                <a href="/modifEmploye/{{ $annonce->id }}" class="btn btn-primary">Modifier</a>
+                                <a href="/modifAnnonce/{{ $annonce->id }}" class="btn btn-primary">Modifier</a>
                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                     data-bs-target="#idmodal_{{ $annonce->id }}">Supprimer</button>
                             </td>
@@ -73,4 +73,5 @@
 @endsection
 
 
-{{-- Faire ajout + modif annonce --}}
+
+{{-- verifier et faire test request annéee km prix --}}

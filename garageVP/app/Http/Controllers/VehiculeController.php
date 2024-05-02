@@ -120,6 +120,66 @@ class VehiculeController extends Controller
         return redirect('/gestionAnnonce')->with('success', 'Annonce enregistrée avec succès');
     }
 
+    public function formMofifAnnonce($id)
+    {
+        $annonces = Vehicule::find($id);
+
+        return view('pages.gestion.modifAnnonce', compact('annonces'));
+    }
+
+    public function modifAnnonce($id, AnnonceRequest $request)
+    {
+        $annonce = Vehicule::findOrFail($id);
+
+        $annonce->marque = $request->input('marque');
+        $annonce->model = $request->input('model');
+        $annonce->km = $request->input('km');
+        $annonce->annee = $request->input('annee');
+        $annonce->description = $request->input('description');
+        $annonce->energie = $request->input('energie');
+        $annonce->boite = $request->input('boite');
+        $annonce->prix = $request->input('prix');
+
+        Storage::disk('public')->delete([$annonce->img1, $annonce->img2, $annonce->img3, $annonce->img4, $annonce->img5, $annonce->img6, $annonce->img7, $annonce->img8, $annonce->img9, $annonce->img10]);
+
+
+        if ($request->hasFile('img1')) {
+            $annonce->img1 = $request->file('img1')->store('annonceImg', 'public');
+        }
+        if ($request->hasFile('img2')) {
+            $annonce->img2 = $request->file('img2')->store('annonceImg', 'public');
+        }
+        if ($request->hasFile('img3')) {
+            $annonce->img2 = $request->file('img2')->store('annonceImg', 'public');
+        }
+        if ($request->hasFile('img4')) {
+            $annonce->img2 = $request->file('img2')->store('annonceImg', 'public');
+        }
+        if ($request->hasFile('img5')) {
+            $annonce->img2 = $request->file('img2')->store('annonceImg', 'public');
+        }
+        if ($request->hasFile('img6')) {
+            $annonce->img2 = $request->file('img2')->store('annonceImg', 'public');
+        }
+        if ($request->hasFile('img7')) {
+            $annonce->img2 = $request->file('img2')->store('annonceImg', 'public');
+        }
+        if ($request->hasFile('img8')) {
+            $annonce->img2 = $request->file('img2')->store('annonceImg', 'public');
+        }
+        if ($request->hasFile('img9')) {
+            $annonce->img2 = $request->file('img2')->store('annonceImg', 'public');
+        }
+        if ($request->hasFile('img10')) {
+            $annonce->img2 = $request->file('img2')->store('annonceImg', 'public');
+        }
+
+        $annonce->save();
+
+        return redirect('/gestionAnnonce')->with('success', 'Annonce modifiée avec succès');
+    }
+
+
     public function effacerVehicule($id)
     {
         $annonce = Vehicule::find($id);
