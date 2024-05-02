@@ -46,6 +46,16 @@ Route::get('/deconnexion', [UserController::class, 'deconnexion']);
 Route::get('reset-password', [ResetPasswordController::class, 'showResetForm'])->name('reset-password');
 
 
+Route::get('/allAnnonce', [VehiculeController::class, 'allAnnonce']);
+
+Route::get('/detailAnnonce/{id}', [VehiculeController::class, 'detail']);
+
+
+
+
+
+
+
 
 
 

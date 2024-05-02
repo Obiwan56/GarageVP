@@ -82,7 +82,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/occasion">Occasions</a>
+                            <a class="nav-link" href="/allAnnonce">Occasions</a>
                         </li>
 
                         <li class="nav-item">

@@ -15,6 +15,18 @@ class VehiculeController extends Controller
         return view('pages.gestion.gestionAnnonce', compact('annonces'));
     }
 
+    public function allAnnonce()
+    {
+        $annonces = Vehicule::all();
+        return view('pages.allAnnonce', compact('annonces'));
+    }
+
+    public function detail($id)
+    {
+        $annonce = Vehicule::findOrFail($id);
+        return view('pages.detailAnnonce', compact('annonce'));
+    }
+
     public function formCreerAnnonce()
     {
         return view('pages.gestion.ajoutAnnonce');

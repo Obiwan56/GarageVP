@@ -31,6 +31,8 @@
                             <td>{{ $annonce->annee }}</td>
                             <td>{{ $annonce->km }}</td>
                             <td>{{ $annonce->description }}</td>
+                            <td>{{ $annonce->energie }}</td>
+                            <td>{{ $annonce->boite }}</td>
                             <td>{{ $annonce->prix }}</td>
 
                             <td>
