@@ -8,26 +8,23 @@
                 <img id="imagePrincipale" src="{{ asset('storage/' . $annonce->img1) }}" class="d-block w-100" alt="...">
                 <!-- Galerie d'images -->
                 <div class="row mt-3 galerie-images">
-                    <div class="col-md-4">
-                        <img src="{{ asset('storage/' . $annonce->img1) }}" class="img-thumbnail miniature" alt="...">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="{{ asset('storage/' . $annonce->img2) }}" class="img-thumbnail miniature" alt="...">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="{{ asset('storage/' . $annonce->img3) }}" class="img-thumbnail miniature" alt="...">
-                    </div>
-                    <!-- Ajoutez ici d'autres images si nécessaire -->
+                    @for ($i = 1; $i <= 10; $i++)
+                        @if (!empty($annonce["img$i"]))
+                            <div class="col-md-4">
+                                <img src="{{ asset('storage/' . $annonce["img$i"]) }}" class="img-thumbnail miniature" alt="...">
+                            </div>
+                        @endif
+                    @endfor
                 </div>
             </div>
             <div class="col-md-6">
                 <h3>Description</h3>
                 <p>{{ $annonce->marque }} {{ $annonce->model }} <br>
-                Année {{ $annonce->annee }} <br>
-                {{ $annonce->km }} km <br>
-                {{ $annonce->description }} <br>
-                {{ $annonce->energie }} <br>
-                Prix: {{ $annonce->prix }} € <br>
+                    Année {{ $annonce->annee }} <br>
+                    {{ $annonce->km }} km <br>
+                    {{ $annonce->description }} <br>
+                    {{ $annonce->energie }} <br>
+                    Prix: {{ $annonce->prix }} € <br>
                 </p>
 
                 <h3>Disponible de suite</h3>
@@ -41,9 +38,12 @@
         .miniature {
             width: 100%;
             height: auto;
-            border: 2px solid #ddd; /* Bordure grise */
-            border-radius: 5px; /* Coins arrondis */
-            cursor: pointer; /* Curseur pointeur au survol */
+            border: 2px solid #ddd;
+            /* Bordure grise */
+            border-radius: 5px;
+            /* Coins arrondis */
+            cursor: pointer;
+            /* Curseur pointeur au survol */
         }
 
         /* Style pour centrer les images */

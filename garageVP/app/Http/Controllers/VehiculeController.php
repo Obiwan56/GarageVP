@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AnnonceRequest;
 use App\Models\Vehicule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class VehiculeController extends Controller
 {
@@ -116,5 +118,34 @@ class VehiculeController extends Controller
             'img10' => $imgChemin10,
         ]);
         return redirect('/gestionAnnonce')->with('success', 'Annonce enregistrée avec succès');
+    }
+
+    public function effacerVehicule($id)
+    {
+        $annonce = Vehicule::find($id);
+
+        // Récupérer les chemins complets des images dans le dossier public
+        $cheminImages = [
+            public_path('storage/' . $annonce->img1),
+            public_path('storage/' . $annonce->img2),
+            public_path('storage/' . $annonce->img3),
+            public_path('storage/' . $annonce->img4),
+            public_path('storage/' . $annonce->img5),
+            public_path('storage/' . $annonce->img6),
+            public_path('storage/' . $annonce->img7),
+            public_path('storage/' . $annonce->img8),
+            public_path('storage/' . $annonce->img9),
+            public_path('storage/' . $annonce->img10),
+
+        ];
+
+        // Supprimer les images du dossier public
+        foreach ($cheminImages as $chemin) {
+            File::delete($chemin);
+        }
+
+        $annonce->delete();
+
+        return redirect('/gestionAnnonce')->with('success', 'Annonce supprimée avec succès');
     }
 }
