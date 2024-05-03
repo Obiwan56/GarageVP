@@ -12,7 +12,7 @@
     </div>
 
     <div class="container p-4">
-        <a href="/listComPubli">Voir les commentaires publiés</a>
+        <a href="/listeComPubli">Voir les commentaires publiés</a>
     </div>
 
     <div class="container p-4">

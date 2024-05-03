@@ -41,8 +41,8 @@ Route::get('/deleteCom/{id}', [CommentaireController::class, 'deleteCom']);
 Route::get('/deleteCom2/{id}', [CommentaireController::class, 'deleteCom2']);
 Route::get('/aprouvCom/{id}', [CommentaireController::class, 'aprouvCom']);
 Route::get('/listeComPubli', [CommentaireController::class, 'commentaireOk']);
-Route::get('/allCom', [CommentaireController::class, 'listeCommentaireOk']);
-Route::get('/dixDerCom', [CommentaireController::class, 'dixDerCom']);
+Route::get('/allCommentaire', [CommentaireController::class, 'listeCommentaireOk']);
+Route::get('/', [CommentaireController::class, 'dixDerCom']);
 
 
 

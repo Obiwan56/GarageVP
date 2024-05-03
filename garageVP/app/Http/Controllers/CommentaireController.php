@@ -36,24 +36,6 @@ class CommentaireController extends Controller
         return view('pages.gestion.gestionCommentaire', compact('coms'));
     }
 
-    //efface les commentaires
-    public function deleteCom($id)
-    {
-        $com = Commentaire::find($id);
-        $com->delete();
-
-        return redirect('/gestionCommentaire')->with('status', 'Commentaire effacé avec succès.');
-    }
-
-    //efface les commentaires publiés
-    public function deleteCom2($id)
-    {
-        $com = Commentaire::find($id);
-        $com->delete();
-
-        return redirect('/listeComPubli')->with('status', 'Commentaire effacé avec succès.');
-    }
-
     //approuve les commentaires
     public function aprouvCom($id)
     {
@@ -75,7 +57,7 @@ class CommentaireController extends Controller
     //affiche la liste des commentaires au clients
     public function listeCommentaireOk(Request $request)
     {
-        $coms = Commentaire::where('validation', 'ok')->paginate(10);
+        $coms = Commentaire::where('validation', 'ok')->get();
 
         return view('pages.allCommentaire', compact('coms'));
     }
@@ -90,5 +72,23 @@ class CommentaireController extends Controller
             ->get();
 
         return view('pages.home', compact('coms'));
+    }
+
+    //efface les commentaires
+    public function deleteCom($id)
+    {
+        $com = Commentaire::find($id);
+        $com->delete();
+
+        return redirect('/gestionCommentaire')->with('status', 'Commentaire effacé avec succès.');
+    }
+
+    //efface les commentaires publiés
+    public function deleteCom2($id)
+    {
+        $com = Commentaire::find($id);
+        $com->delete();
+
+        return redirect('/listeComPubli')->with('status', 'Commentaire effacé avec succès.');
     }
 }

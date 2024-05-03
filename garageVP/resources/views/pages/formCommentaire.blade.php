@@ -17,14 +17,14 @@
                 <div class="mb-3">
                     <label for="name" class="form-label">Votre prénom</label>
                     <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
-                        @error('note')
+                        @error('name')
                         <span class="text-danger"> {{ $message }}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="commentaire" class="form-label">Votre commentaire</label>
                     <textarea id="commentaire" class="form-control" name="commentaire">{{ old('commentaire') }}</textarea>
-                    @error('note')
+                    @error('commentaire')
                         <span class="text-danger"> {{ $message }}</span>
                     @enderror
                 </div>
@@ -39,16 +39,17 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-
                     @error('note')
                         <span class="text-danger"> {{ $message }}</span>
                     @enderror
 
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-5">
                     <button type="submit" class= "btn btn-primary">Envoyer</button>
+                    <a href="/" class="btn btn-primary">Retour</a>
                 </div>
+
                 <p>Tout contenu inapproprié ou offensant ne sera pas publié.</p>
             </form>
         </div>

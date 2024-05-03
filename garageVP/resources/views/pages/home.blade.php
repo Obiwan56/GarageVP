@@ -29,11 +29,11 @@
                 <h3>Réparation de la carrosserie</h3>
             </div>
             <div>
-                <a href="/prestation"><i class="bi bi-wrench-adjustable icon"></i></a>
+                <a href="/prestation/#balise"><i class="bi bi-wrench-adjustable icon"></i></a>
                 <h3>Entretien et mécanique multimarque</h3>
             </div>
             <div>
-                <a href="/occasion"><i class="bi bi-currency-dollar icon"></i></a>
+                <a href="/allAnnonce"><i class="bi bi-currency-dollar icon"></i></a>
                 <h3>Vente de voiture d'occasion</h3>
             </div>
 
@@ -68,7 +68,7 @@
                     <div class="col-xl-6">
                         <a href="/formCommentaire" class="btn btn-primary mb-3 btn-block">Laissez-nous votre témoignage,
                             impression ou commentaire</a>
-                        <a href="/allCommentaires" class="btn btn-primary btn-block">Afficher tous les commentaires</a>
+                        <a href="/allCommentaire" class="btn btn-primary btn-block">Afficher tous les commentaires</a>
                     </div>
                 </div>
             </div>
