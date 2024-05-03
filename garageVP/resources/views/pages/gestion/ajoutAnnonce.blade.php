@@ -56,11 +56,11 @@
                 <label for="energie" class="form-label">Carburant</label>
                 <select id="energie" class="form-select" name="energie" value="{{ old('energie') }}">
                     <option selected disabled value="">Choisir</option>
-                    <option value="diesel">Diesel</option>
-                    <option value="essence">Essence</option>
-                    <option value="hibrid">Hibrid</option>
-                    <option value="electrique">Electrique</option>
-                    <option value="hydrogene">hydrogene</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Essence">Essence</option>
+                    <option value="Hibrid">Hibrid</option>
+                    <option value="Electrique">Electrique</option>
+                    <option value="Hydrogene">hydrogene</option>
                 </select>
                 @error('energie')
                     <span class="text-danger">

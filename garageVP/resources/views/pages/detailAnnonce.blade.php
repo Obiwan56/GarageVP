@@ -22,36 +22,23 @@
                 <p>{{ $annonce->marque }} {{ $annonce->model }} <br>
                     Année {{ $annonce->annee }} <br>
                     {{ $annonce->km }} km <br>
-                    {{ $annonce->description }} <br>
                     {{ $annonce->energie }} <br>
-                    Prix: {{ $annonce->prix }} € <br>
+                    <div class="container">{{ $annonce->description }}</div>
+                     <br>
+
+                    Prix: <span class="text-primary">{{ $annonce->prix }}</span>  € <br>
                 </p>
 
                 <h3>Disponible de suite</h3>
                 <p>Le prix ne comprend pas les frais de la carte grise et de la mise en service</p>
             </div>
         </div>
+        <a href="/allAnnonce" class="btn btn-primary">Retour au annonces</a>
     </div>
 
     <style>
         /* Style des miniatures */
-        .miniature {
-            width: 100%;
-            height: auto;
-            border: 2px solid #ddd;
-            /* Bordure grise */
-            border-radius: 5px;
-            /* Coins arrondis */
-            cursor: pointer;
-            /* Curseur pointeur au survol */
-        }
 
-        /* Style pour centrer les images */
-        .miniature img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
     </style>
 
     <script>

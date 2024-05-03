@@ -10,13 +10,13 @@
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
-html{
+html {
     position: relative;
     min-height: 100%;
 }
 
 //pour être sur de voir tous le contenu de la page (a adapter en fonction de la taille du footer)
-.main{
+.main {
     margin-bottom: 250px;
 }
 
@@ -29,26 +29,27 @@ footer.footer {
 
 
 
-.titre2{
+.titre2 {
     position: relative;
-    &::before{
-        content:"";
+
+    &::before {
+        content: "";
         position: absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-image: url(../../public/image_garage-vp/garage1.jpg);
         background-size: cover;
         filter: brightness(0.3);
     }
 
-    *{
+    * {
         //Positionner les éléments devant le ::before
-        position:relative;
+        position: relative;
     }
 
-    .titre2-contenu{
+    .titre2-contenu {
         height: 200px;
         display: flex;
         flex-direction: column;
@@ -57,30 +58,30 @@ footer.footer {
     }
 }
 
-.presentation{
+.presentation {
     text-align: justify;
 }
 
-.logo{
+.logo {
     width: 50%;
     height: auto;
     max-width: 100;
 
 }
 
-.pcarrosserie{
+.pcarrosserie {
     text-align: justify;
 }
 
-.bouton{
+.bouton {
     margin: auto;
 }
 
-.icon{
+.icon {
     font-size: 80px;
 }
 
-.icon2{
+.icon2 {
     font-size: 20px;
 }
 
@@ -90,27 +91,47 @@ footer.footer {
     text-decoration: none;
     font-size: 3em;
     transition: color .4s;
- }
- .rating a:hover,
- .rating a:focus,
- .rating a:hover ~ a,
- .rating a:focus ~ a {
+}
+
+.rating a:hover,
+.rating a:focus,
+.rating a:hover~a,
+.rating a:focus~a {
     color: orange;
     cursor: pointer;
- }
+}
 
-.card{
+.card {
     width: 18rem;
 }
 
-.caption{
+.caption {
     caption-side: top;
 }
 
 .rating a.selected {
-    color: red; /* Couleur des étoiles sélectionnées */
+    color: red;
+    /* Couleur des étoiles sélectionnées */
 }
 
-.titre{
+.titre {
     font-size: 6vw;
+}
+
+.miniature {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    /* Bordure grise */
+    border-radius: 5px;
+    /* Coins arrondis */
+    cursor: pointer;
+    /* Curseur pointeur au survol */
+}
+
+/* Style pour centrer les images */
+.miniature img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
