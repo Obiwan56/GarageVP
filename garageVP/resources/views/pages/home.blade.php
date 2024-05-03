@@ -8,10 +8,10 @@
     </div>
 
     @if (session('message'))
-    <div class="alert alert-danger m-4">
-        {{ session('message') }}
-    </div>
-@endif
+        <div class="alert alert-danger m-4">
+            {{ session('message') }}
+        </div>
+    @endif
 
     <div class="col p-3 container text-center ">
         <h2 class="text-primary text-center">Nos Prestations</h2>
@@ -48,13 +48,15 @@
                     </tbody>
                 </table>
                 </div">
-                <div class="p-4">
-                    <a href="/commentaire" class="btn btn-primary p-4">Laissez-nous votre témoignage, impression ou
-                        commentaire</a>
-                    <a href="/allCommentaires" class="btn btn-primary p-4 pos">Afficher tous les commentaires</a>
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <a href="/commentaire" class="btn btn-primary mb-3 btn-block">Laissez-nous votre témoignage,
+                            impression ou commentaire</a>
+                        <a href="/allCommentaires" class="btn btn-primary btn-block">Afficher tous les commentaires</a>
+                    </div>
                 </div>
-                <br><br><br><br>
             </div>
-
         </div>
-    @endsection
+
+    </div>
+@endsection

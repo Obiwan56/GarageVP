@@ -50,8 +50,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="/gestionAnnonce">Gestion annonce</a></li>
-                                    <li><a class="dropdown-item" href="/gestionCommentaire">Gestion commentaire<span
-                                                class="badge">3</span></a></li>
+                                    <li><a class="dropdown-item" href="/gestionCommentaire">Gestion commentaire</a></li>
                                     <li><a class="dropdown-item" href="#">Gestion message</a></li>
 
                                     @auth
@@ -105,28 +104,30 @@
         </nav>
     </header>
 
-    <div>
+    <div class="main">
         @yield('contenu')
     </div>
 
     <footer class="bg-dark text-white text-center footer">
-        <div class="row">
-            <div class="col-12 col-lg-4">
-                <h3 class="text-primary">Nos horaires</h3>
-                <div>
-                    <p>Du lundi au vendredi 08h45-12h00 14h00-18h00</p>
-                    <p>Le samedi 08h45-12h00</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <h3 class="text-primary">Nos horaires</h3>
+                    <div>
+                        <p>Du lundi au vendredi 08h45-12h00 14h00-18h00</p>
+                        <p>Le samedi 08h45-12h00</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6 col-lg-4">
-                <p>Garage V. Parrot <br />
-                    8 rue du chemin <br />
-                    88950 Toulouse <br />
-                    88 01 01 01 01 <br />
-                </p>
-            </div>
-            <div class="col-6 col-lg-4 ">
-                <img src="/image_garage-vp/logoPV.png" alt="logoPV" class="logo img-fluid">
+                <div class="col-6 col-lg-4">
+                    <p>Garage V. Parrot <br />
+                        8 rue du chemin <br />
+                        88950 Toulouse <br />
+                        88 01 01 01 01 <br />
+                    </p>
+                </div>
+                <div class="col-6 col-lg-4 ">
+                    <img src="/image_garage-vp/logoPV.png" alt="logoPV" class="logo img-fluid">
+                </div>
             </div>
         </div>
     </footer>

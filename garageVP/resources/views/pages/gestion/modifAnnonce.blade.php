@@ -47,7 +47,7 @@
 
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea id="description" class="form-control" name="description">value="{{ $annonces->description }}"</textarea>
+                <textarea id="description" class="form-control" name="description">{{ $annonces->description }}</textarea>
                 @error('description')
                     <span class="text-danger">
                         {{ $message }}</span>
@@ -204,7 +204,7 @@
                 <label for="img10">Photo véhicule 10</label>
                 <input type="file" name="img10" id="img10" class="form-control">
                 <input type="hidden" name="img10_old" value="{{ $annonces->img10 }}">
-                @if ($annonces->img1)
+                @if ($annonces->img10)
                     <img src="{{ asset('storage/' . $annonces->img10) }}" alt="Image 10" style="max-width: 150px;">
                 @endif
                 @error('img10')
