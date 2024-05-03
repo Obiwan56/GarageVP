@@ -3,7 +3,7 @@
 @section('contenu')
     <div class="titre2 text-center text-primary">
         <div class="titre2-contenu">
-            <h1>Formulaire de contact</h1>
+            <h1 class="titre">Formulaire de contact</h1>
         </div>
     </div>
 

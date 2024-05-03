@@ -7,11 +7,19 @@
         </div>
     </div>
 
-    @if (session('message'))
-        <div class="alert alert-danger m-4">
-            {{ session('message') }}
-        </div>
-    @endif
+    <div class="p-4">
+        @if (session('message'))
+            <div class="alert alert-danger m-4">
+                {{ session('message') }}
+            </div>
+        @endif
+
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+    </div>
 
     <div class="col p-3 container text-center ">
         <h2 class="text-primary text-center">Nos Prestations</h2>
@@ -32,25 +40,33 @@
             <div class="p-4">
                 <table class="table table-striped" id="tablCom">
                     <caption class="caption">Les dix derniers commentaires</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Commentaire</th>
+                            <th scope="col">note</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">Jack</th>
-                            <td>super garage avec une bonne équipe très agréable</td>
-                            <td>5 etoiles</td>
-                            <td>20/01/2021</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">John</th>
-                            <td>merci pour votre accueil</td>
-                            <td>5 etoiles</td>
-                            <td>02/01/2021</td>
-                        </tr>
+                        @if (isset($coms) && count($coms) > 0)
+                            @foreach ($coms as $com)
+                                <tr>
+                                    <td>{{ $com->name }}</td>
+                                    <td>{{ $com->commentaire }}</td>
+                                    <td>{{ $com->note }}</td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td colspan="3">Aucun commentaire trouvé.</td>
+                            </tr>
+                        @endif
                     </tbody>
                 </table>
                 </div">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
-                        <a href="/commentaire" class="btn btn-primary mb-3 btn-block">Laissez-nous votre témoignage,
+                        <a href="/formCommentaire" class="btn btn-primary mb-3 btn-block">Laissez-nous votre témoignage,
                             impression ou commentaire</a>
                         <a href="/allCommentaires" class="btn btn-primary btn-block">Afficher tous les commentaires</a>
                     </div>

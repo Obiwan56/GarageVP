@@ -12,5 +12,6 @@ class Commentaire extends Model
         'name',
         'commentaire',
         'note',
+        'validation'
     ];
 }
