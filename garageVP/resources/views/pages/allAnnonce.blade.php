@@ -7,11 +7,11 @@
         </div>
     </div>
 
-    <div class="container text-center">
+    {{-- <div class="container text-center">
         <div class="row justify-content-center">
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <label for="prixMin">Prix minimum</label>
-                <select id="prixMin" class="form-select" aria-label="Default select example">
+                <select id="prixMin" class="form-select" name="prixMin" aria-label="Default select example">
                     <option selected>Prix min</option>
                     <option value="1">3000</option>
                     <option value="2">4000</option>
@@ -25,7 +25,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <label for="prixMax">Prix maximum</label>
-                <select id="prixMax" class="form-select" aria-label="Default select example">
+                <select id="prixMax" class="form-select" name="prixMax" aria-label="Default select example">
                     <option selected>Prix max</option>
                     <option value="1">10000</option>
                     <option value="2">11000</option>
@@ -39,7 +39,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <label for="kmMin">Km minimum</label>
-                <select id="kmMin" class="form-select" aria-label="Default select example">
+                <select id="kmMin" class="form-select" name="kmMin" aria-label="Default select example">
                     <option selected>Km min</option>
                     <option value="1">50000</option>
                     <option value="2">100000</option>
@@ -48,7 +48,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <label for="kmMax">Km maximum</label>
-                <select id="kmMax" class="form-select" aria-label="Default select example">
+                <select id="kmMax" class="form-select" name="kmMax" aria-label="Default select example">
                     <option selected>Km max</option>
                     <option value="1">100000</option>
                     <option value="2">200000</option>
@@ -57,7 +57,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <label for="yearMin">Année minimum</label>
-                <select id="yearMin" class="form-select" aria-label="Default select example">
+                <select id="yearMin" class="form-select" name="yearMin" aria-label="Default select example">
                     <option selected>Année min</option>
                     <option value="1">2000</option>
                     <option value="2">2005</option>
@@ -66,7 +66,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <label for="yearMax">Année maximum</label>
-                <select id="yearMax" class="form-select" aria-label="Default select example">
+                <select id="yearMax" class="form-select" name="yearMax" aria-label="Default select example">
                     <option selected>Année max</option>
                     <option value="1">2010</option>
                     <option value="2">2015</option>
@@ -77,7 +77,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <label for="carbu"> </label>
 
-                <select id="carbu" class="form-select" aria-label="Default select example">
+                <select id="carbu" class="form-select" name="carbu" aria-label="Default select example">
                     <option selected>Energie</option>
                     <option value="1">Diesel</option>
                     <option value="2">Essence</option>
@@ -89,7 +89,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <label for="boite"> </label>
 
-                <select id="boite" class="form-select" aria-label="Default select example">
+                <select id="boite" class="form-select" name="boite" aria-label="Default select example">
                     <option selected>Boite</option>
                     <option value="1">Auto</option>
                     <option value="2">Manuelle</option>
@@ -100,10 +100,11 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container-fluid mt-4">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 justify-content-center">
+        <div id="annonces-container"
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 justify-content-center">
             @foreach ($annonces as $annonce)
                 <input type="text" name="id" style="display: none" value="{{ $annonce->id }}">
 
@@ -136,7 +137,7 @@
                             </button>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title text-center">{{ $annonce->marque}}  {{ $annonce->model }}</h5>
+                            <h5 class="card-title text-center">{{ $annonce->marque }} {{ $annonce->model }}</h5>
                             <div>
                                 <p>{{ $annonce->annee }}</p>
                                 <p>{{ $annonce->energie }}</p>
@@ -155,9 +156,11 @@
         </div>
     </div>
 
-    <script>
-        const annonces = php echo json_encode($annonces);
+    <script src="{{ asset('js/filtre.js') }}"></script>
+
+    <script id="annonces-data" type="application/json">
+        {!! json_encode($annonces) !!}
     </script>
 
-    <script src="{{ asset('js/filtre.js') }}"></script>
+
 @endsection

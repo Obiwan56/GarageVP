@@ -208,4 +208,32 @@ class VehiculeController extends Controller
 
         return redirect('/gestionAnnonce')->with('success', 'Annonce supprimée avec succès');
     }
+
+
+    public function filtre(Request $request)
+    {
+        // Récupérez les critères de filtrage depuis la requête HTTP
+        $prixMin = $request->input('prixMin');
+        $prixMax = $request->input('prixMax');
+        $kmMin = $request->input('kmMin');
+        $kmMax = $request->input('kmMax');
+        $yearMin = $request->input('yearMin');
+        $yearMax = $request->input('yearMax');
+        $carbu = $request->input('carbu');
+        $boite = $request->input('boite');
+
+        // Filtrer les annonces en fonction des critères de filtrage
+        $annonces = Vehicule::where('prix', '>=', $prixMin)
+            ->where('prix', '<=', $prixMax)
+            ->where('km', '>=', $kmMin)
+            ->where('km', '<=', $kmMax)
+            ->where('annee', '>=', $yearMin)
+            ->where('annee', '<=', $yearMax)
+            ->where('carburant', $carbu)
+            ->where('boite', $boite)
+            ->get();
+
+        // Retournez les annonces filtrées sous forme de vue partielle
+        return view('annonces_partiel', ['annonces' => $annonces]);
+    }
 }

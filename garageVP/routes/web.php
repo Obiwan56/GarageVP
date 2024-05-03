@@ -56,6 +56,7 @@ Route::post('/modifAnnonce/{id}', [VehiculeController::class, 'modifAnnonce']);
 Route::get('/effacerAnnonce/{id}', [VehiculeController::class, 'effacerVehicule']);
 
 
+Route::post('/annonces/filtre', [VehiculeController::class, 'filtre'])->name('annonces.filtre');
 
 
 

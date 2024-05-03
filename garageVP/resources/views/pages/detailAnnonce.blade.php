@@ -11,7 +11,8 @@
                     @for ($i = 1; $i <= 10; $i++)
                         @if (!empty($annonce["img$i"]))
                             <div class="col-md-4">
-                                <img src="{{ asset('storage/' . $annonce["img$i"]) }}" class="img-thumbnail miniature" alt="...">
+                                <img src="{{ asset('storage/' . $annonce["img$i"]) }}" class="img-thumbnail miniature"
+                                    alt="...">
                             </div>
                         @endif
                     @endfor
@@ -23,23 +24,20 @@
                     Année {{ $annonce->annee }} <br>
                     {{ $annonce->km }} km <br>
                     {{ $annonce->energie }} <br>
-                    <div class="container">{{ $annonce->description }}</div>
-                     <br>
+                <div class="container">{{ $annonce->description }}</div>
+                <br>
 
-                    Prix: <span class="text-primary">{{ $annonce->prix }}</span>  € <br>
+                Prix: <span class="text-primary">{{ $annonce->prix }}</span> € <br>
                 </p>
 
                 <h3>Disponible de suite</h3>
                 <p>Le prix ne comprend pas les frais de la carte grise et de la mise en service</p>
             </div>
         </div>
-        <a href="/allAnnonce" class="btn btn-primary">Retour au annonces</a>
+        <a href="/allAnnonce" class="btn btn-primary">Retour aux annonces</a>
     </div>
 
-    <style>
-        /* Style des miniatures */
 
-    </style>
 
     <script>
         // Sélection des miniatures
