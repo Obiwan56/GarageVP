@@ -136,7 +136,7 @@
                             </button>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title text-center">{{ $annonce->model }}</h5>
+                            <h5 class="card-title text-center">{{ $annonce->marque}}  {{ $annonce->model }}</h5>
                             <div>
                                 <p>{{ $annonce->annee }}</p>
                                 <p>{{ $annonce->energie }}</p>
