@@ -30,7 +30,7 @@
 
         <article>
             <div class="container p-4 bg-dark text-white">
-                <h2 id="balise" class="text-center text-primary">Entretien et réparation de véhicules</h2>
+                <h2 id="carrosserie" class="text-center text-primary">Entretien et réparation de véhicules</h2>
                 <div class="row row-cols-2 align-items-center">
                     <div class="col">
                         <img class="w-100 rounded" src="/image_garage-vp/entretien.jpg" alt="">
@@ -70,7 +70,7 @@
                         <img class="w-100 rounded" src="/image_garage-vp/vendeur.jpg" alt="">
                     </div>
                     <div class="bouton p-4">
-                        <a href="/occasion" class="btn btn-primary">Voir les véhicules</a>
+                        <a href="/allAnnonce" class="btn btn-primary">Voir les véhicules</a>
                     </div>
                 </div>
             </div>

@@ -139,10 +139,10 @@
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ $annonce->marque }} {{ $annonce->model }}</h5>
                             <div>
-                                <p>{{ $annonce->annee }}</p>
-                                <p>{{ $annonce->energie }}</p>
-                                <p>{{ $annonce->km }} km</p>
-                                <p class="text-primary text-center">{{ $annonce->prix }} €</p>
+                                <p>Année <span class="fw-bold">{{ $annonce->annee }}</span></p>
+                                <p class="fw-bold">{{ $annonce->energie }}</p>
+                                <p> <span class="fw-bold">{{ $annonce->km }}</span> km</p>
+                                <p class="text-primary text-center fw-bold">{{ $annonce->prix }} €</p>
                             </div>
                             <a class="btn btn-primary d-grid gap-2 col-6 mx-auto"
                                 href="/detailAnnonce/{{ $annonce->id }}">Voir détail</a>
@@ -161,6 +161,4 @@
     <script id="annonces-data" type="application/json">
         {!! json_encode($annonces) !!}
     </script>
-
-
 @endsection

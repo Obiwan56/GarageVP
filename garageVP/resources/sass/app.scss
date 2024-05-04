@@ -9,6 +9,17 @@
 
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
+body{
+    background-color: #E1E2E2
+
+    ;
+}
+// body {
+//     background-image: url('/public/image_garage-vp/maserati.jpg');
+//     background-size: cover; /* Ajuste l'image pour remplir toute la zone */
+//     background-position: center; /* Centre l'image horizontalement et verticalement */
+//     opacity: 10;
+// }
 
 html {
     position: relative;
@@ -85,22 +96,6 @@ footer.footer {
     font-size: 20px;
 }
 
-.rating a {
-    float: right;
-    color: #aaa;
-    text-decoration: none;
-    font-size: 3em;
-    transition: color .4s;
-}
-
-.rating a:hover,
-.rating a:focus,
-.rating a:hover~a,
-.rating a:focus~a {
-    color: orange;
-    cursor: pointer;
-}
-
 .card {
     width: 18rem;
 }
@@ -109,10 +104,6 @@ footer.footer {
     caption-side: top;
 }
 
-.rating a.selected {
-    color: red;
-    /* Couleur des étoiles sélectionnées */
-}
 
 .titre {
     font-size: 6vw;
@@ -129,9 +120,3 @@ footer.footer {
     /* Curseur pointeur au survol */
 }
 
-/* Style pour centrer les images */
-.miniature img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}

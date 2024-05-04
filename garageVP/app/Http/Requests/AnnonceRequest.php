@@ -26,7 +26,7 @@ class AnnonceRequest extends FormRequest
             'model' => 'required',
             'annee' => 'required|numeric|digits:4',
             'km' => 'required|numeric',
-            'description' => 'required',
+            'description' => 'required|max:2000',
             'energie' => 'required',
             'prix' => 'required|between:1,7',
             'boite' => 'required',
@@ -60,6 +60,7 @@ class AnnonceRequest extends FormRequest
             'boite.required' => 'Le type de boîte de vitesse est requise',
 
             'description.required' => 'La description est requise',
+            'description.max' => '2000 caractères maximum',
 
             'energie.required' => "Veuyez choisir un carburant",
 

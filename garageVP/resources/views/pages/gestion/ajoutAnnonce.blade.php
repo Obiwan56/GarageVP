@@ -56,11 +56,11 @@
                 <label for="energie" class="form-label">Carburant</label>
                 <select id="energie" class="form-select" name="energie" value="{{ old('energie') }}">
                     <option selected disabled value="">Choisir</option>
-                    <option value="Diesel">Diesel</option>
-                    <option value="Essence">Essence</option>
-                    <option value="Hibrid">Hibrid</option>
-                    <option value="Electrique">Electrique</option>
-                    <option value="Hydrogene">hydrogene</option>
+                    <option value="Diesel" {{ old('energie') == 'Diesel' ? 'selected' : '' }}>Diesel</option>
+                    <option value="Essence" {{ old('energie') == 'Essence' ? 'selected' : '' }}>Essence</option>
+                    <option value="Hibrid" {{ old('energie') == 'Hibrid' ? 'selected' : '' }}>Hibrid</option>
+                    <option value="Electrique" {{ old('energie') == 'Electrique' ? 'selected' : '' }}>Electrique</option>
+                    <option value="Hydrogene" {{ old('energie') == 'Hydrogene' ? 'selected' : '' }}>Hydrogene</option>
                 </select>
                 @error('energie')
                     <span class="text-danger">
@@ -72,8 +72,9 @@
                 <label for="boite" class="form-label">Boîte de vitesses</label>
                 <select id="boite" class="form-select" name="boite" value="{{ old('boite') }}">
                     <option selected disabled value="">Choisir</option>
-                    <option value="automatique">automatique</option>
-                    <option value="manuelle">manuelle</option>
+
+                    <option value="automatique" {{ old('boite') == 'automatique' ? 'selected' : '' }}>automatique</option>
+                    <option value="manuelle" {{ old('boite') == 'manuelle' ? 'selected' : '' }}>manuelle</option>
                 </select>
                 @error('boite')
                     <span class="text-danger">
@@ -169,5 +170,3 @@
         <br><br><br><br><br><br><br><br>
     </form>
 @endsection
-
-

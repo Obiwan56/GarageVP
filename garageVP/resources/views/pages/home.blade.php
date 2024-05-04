@@ -29,7 +29,7 @@
                 <h3>Réparation de la carrosserie</h3>
             </div>
             <div>
-                <a href="/prestation/#balise"><i class="bi bi-wrench-adjustable icon"></i></a>
+                <a href="/prestation/#carrosserie"><i class="bi bi-wrench-adjustable icon"></i></a>
                 <h3>Entretien et mécanique multimarque</h3>
             </div>
             <div>

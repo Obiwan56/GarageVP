@@ -29,8 +29,8 @@
                                     data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->prenom }}</span>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="/deconnexion">Déconnexion</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('reset-password') }}">Modification mdp</a>
-                                    </li>
+                                    {{-- <li><a class="dropdown-item" href="{{ route('reset-password') }}">Modification mdp</a>
+                                    </li> --}}
                                 </ul>
                             </li>
 

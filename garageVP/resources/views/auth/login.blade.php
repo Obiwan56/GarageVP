@@ -46,9 +46,9 @@
 
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary">{{ __('Connexion') }}</button>
-                            @if (Route::has('password.request'))
+                          {{--   @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}">{{ __('Mot de passe oublié?') }}</a>
-                            @endif
+                            @endif--}}
                         </div>
                     </form>
                 </div>
