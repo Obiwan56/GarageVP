@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ComRequest;
 use App\Models\Commentaire;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class CommentaireController extends Controller
 {
@@ -57,7 +58,7 @@ class CommentaireController extends Controller
     //affiche la liste des commentaires au clients
     public function listeCommentaireOk(Request $request)
     {
-        $coms = Commentaire::where('validation', 'ok')->get();
+        $coms = Commentaire::where('validation', 'ok')->paginate(10);
 
         return view('pages.allCommentaire', compact('coms'));
     }

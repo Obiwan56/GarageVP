@@ -46,10 +46,13 @@
 
             </tbody>
         </table>
+
+        {{ $coms->links() }}
+
         <div class="container">
             <a href="/" class="btn btn-primary mb-3 btn-block">Revenir à l'accueil</a>
         </div>
-    </div>
 
+    </div>
 
 @endsection

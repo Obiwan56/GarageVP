@@ -3,7 +3,8 @@
 @section('contenu')
     <div class="titre2 text-center text-primary">
         <div class="titre2-contenu">
-            <h1 class="titre">Bienvenue au Garage Vincent Parrot</h1>
+            <h1 class="titre fw-bold">Garage Vincent Parrot</h1>
+            <p>Fuck the world</p>
         </div>
     </div>
 
@@ -17,6 +18,12 @@
         @if (session('status'))
             <div class="alert alert-success" role="alert">
                 {{ session('status') }}
+            </div>
+        @endif
+
+        @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
             </div>
         @endif
     </div>

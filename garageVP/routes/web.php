@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\CommentaireController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VehiculeController;
@@ -45,7 +46,8 @@ Route::get('/allCommentaire', [CommentaireController::class, 'listeCommentaireOk
 Route::get('/', [CommentaireController::class, 'dixDerCom']);
 
 
-
+Route::get('/contact', [ContactController::class, 'formContact']);
+Route::post('/contact', [ContactController::class, 'contact']);
 
 
 

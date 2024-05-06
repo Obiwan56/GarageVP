@@ -9,11 +9,10 @@
 
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
-body{
-    background-color: #E1E2E2
-
-    ;
+body {
+    background-color: #E1E2E2;
 }
+
 // body {
 //     background-image: url('/public/image_garage-vp/maserati.jpg');
 //     background-size: cover; /* Ajuste l'image pour remplir toute la zone */
@@ -106,7 +105,7 @@ footer.footer {
 
 
 .titre {
-    font-size: 6vw;
+    font-size: 5vw;
 }
 
 .miniature {
@@ -119,4 +118,3 @@ footer.footer {
     cursor: pointer;
     /* Curseur pointeur au survol */
 }
-
