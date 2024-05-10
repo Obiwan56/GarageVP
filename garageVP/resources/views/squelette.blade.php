@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content="Garage Automobile VP propose des services de réparation et d'entretien pour tous types de véhicules. Spécialistes en mécanique, carrosserie et diagnostic électronique. Contactez-nous dès maintenant pour prendre rendez-vous!">
+    <meta name="keywords"
+        content="garage, automobile, réparation, entretien, mécanique, carrosserie, diagnostic électronique, véhicules">
+
+
     <title>GarageVP</title>
 </head>
 
@@ -51,7 +57,8 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="/gestionAnnonce">Gestion annonce</a></li>
                                     <li><a class="dropdown-item" href="/gestionCommentaire">Gestion commentaire</a></li>
-                                    <li><a class="dropdown-item" href="#">Gestion message</a></li>
+                                    <li><a class="dropdown-item" href="http://gmail.com" target="_blank">Gestion
+                                            message</a></li>
 
                                     @auth
                                         @if (auth()->user()->role === 'admin')

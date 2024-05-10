@@ -65,4 +65,7 @@
 
             </div>
     </form>
+
+    <script src="{{ asset('js/ajoutEmploye.js') }}"></script>
+
 @endsection

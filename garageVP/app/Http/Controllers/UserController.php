@@ -41,7 +41,7 @@ class UserController extends Controller
         return view('pages.gestion.modifEmploye', compact('users'));
     }
 
-    public function modifUser(Request $request)
+    public function modifUser(UserRequest $request)
     {
         $user = User::find($request->id);
         $user->name = $request->name;
@@ -67,7 +67,7 @@ class UserController extends Controller
     {
         auth()->logout();
 
-        return redirect('/');
+        return redirect('/')->with('status', 'Vous êtes bien déconnecté');
     }
 
 }
