@@ -4,10 +4,10 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SeviceController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VehiculeController;
 use Illuminate\Support\Facades\Route;
-
 
 Route::get('/', function () {
     return view('pages.home');
@@ -17,9 +17,9 @@ Route::get('/presentation', function () {
     return view('pages.presentation');
 });
 
-Route::get('/prestation', function () {
-    return view('pages.prestation');
-});
+Route::get('/prestation', [SeviceController::class, 'prestationService']);
+Route::get('/home', [SeviceController::class, 'prestationHomeService']);
+
 
 Route::get('/contact', function () {
     return view('pages.contact');
@@ -45,6 +45,7 @@ Route::get('/detailAnnonce/{id}', [VehiculeController::class, 'detail']);
 Route::post('/annonces/filtre', [VehiculeController::class, 'filtre'])->name('annonces.filtre');
 
 
+
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::get('/ajoutEmploye', [UserController::class, 'formUser']);
@@ -53,6 +54,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/modifEmploye/{id}', [UserController::class, 'modifEmploye']);
     Route::post('/modifEmploye/{id}', [UserController::class, 'modifUser']);
     Route::get('/effacerEmploye/{id}', [UserController::class, 'effacerEmploye']);
+
+
+    Route::get('/gestionService', [SeviceController::class, 'listService']);
+    Route::get('/ajoutService', [SeviceController::class, 'formCreerService']);
+    Route::post('/ajoutService', [SeviceController::class, 'newService']);
+    Route::get('/modifService/{id}', [SeviceController::class, 'formModifService']);
+    Route::post('/modifService/{id}', [SeviceController::class, 'modifService']);
+    Route::get('/effacerService/{id}', [SeviceController::class, 'deleteService']);
 });
 
 

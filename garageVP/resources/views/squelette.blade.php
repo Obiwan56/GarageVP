@@ -66,6 +66,7 @@
                                                 <hr class="dropdown-divider">
                                             </li>
                                             <li><a class="dropdown-item" href="/gestionEmploye">Gestion employé</a></li>
+                                            <li><a class="dropdown-item" href="/gestionService">Gestion services</a></li>
                                         @endif
                                     @endauth
 

@@ -3,8 +3,8 @@
 @section('contenu')
     <div class="titre2 text-center text-primary">
         <div class="titre2-contenu">
-            <h1 class="titre fw-bold">Garage Vincent Parrot</h1>
-            <p>Fuck the world</p>
+            <h1 class="titre">Garage Vincent Parrot</h1>
+
         </div>
     </div>
 
