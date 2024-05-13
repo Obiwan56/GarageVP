@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AnnonceRequest;
+use App\Http\Requests\ContactRequest;
+use App\Mail\ContactAnnonceMail;
 use App\Models\Vehicule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 
 class VehiculeController extends Controller
 {
@@ -25,8 +28,8 @@ class VehiculeController extends Controller
 
     public function detail($id)
     {
-        $annonce = Vehicule::findOrFail($id);
-        return view('pages.detailAnnonce', compact('annonce'));
+        $vehicule = Vehicule::findOrFail($id);
+        return view('pages.detailAnnonce', compact('vehicule'));
     }
 
     public function formCreerAnnonce()
@@ -236,4 +239,6 @@ class VehiculeController extends Controller
         // Retournez les annonces filtrées sous forme de vue partielle
         return view('annonces_partiel', ['annonces' => $annonces]);
     }
+
+
 }

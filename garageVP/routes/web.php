@@ -34,16 +34,17 @@ Route::get('/', [CommentaireController::class, 'dixDerCom']);
 Route::get('/contact', [ContactController::class, 'formContact']);
 Route::post('/contact', [ContactController::class, 'contact']);
 
-Route::get('/deconnexion', [UserController::class, 'deconnexion']);
+Route::get('/contact-annonce/{id}/form', [ContactController::class, 'formContactAnnonce'])->name('pages.contactAnnonceForm');
+Route::get('/annonce/{id}', [ContactController::class, 'formContactAnnonce'])->name('pages.detailAnnonce');
+Route::post('/contact-annonce/{id}', [ContactController::class, 'contactAnnonce'])->name('contactAnnonce');
 
-Route::get('reset-password', [ResetPasswordController::class, 'showResetForm'])->name('reset-password');
+
+
+Route::get('/deconnexion', [UserController::class, 'deconnexion']);
 
 Route::get('/allAnnonce', [VehiculeController::class, 'allAnnonce']);
 
 Route::get('/detailAnnonce/{id}', [VehiculeController::class, 'detail']);
-
-Route::post('/annonces/filtre', [VehiculeController::class, 'filtre'])->name('annonces.filtre');
-
 
 
 Route::middleware(['auth', 'role:admin'])->group(function () {

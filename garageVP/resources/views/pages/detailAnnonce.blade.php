@@ -4,14 +4,14 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="text-center">{{ $annonce->marque }} {{ $annonce->model }}</h1>
-                <img id="imagePrincipale" src="{{ asset('storage/' . $annonce->img1) }}" class="d-block w-100" alt="...">
+                <h1 class="text-center">{{ $vehicule->marque }} {{ $vehicule->model }}</h1>
+                <img id="imagePrincipale" src="{{ asset('storage/' . $vehicule->img1) }}" class="d-block w-100" alt="...">
                 <!-- Galerie d'images -->
                 <div class="row mt-3 galerie-images">
                     @for ($i = 1; $i <= 10; $i++)
-                        @if (!empty($annonce["img$i"]))
+                        @if (!empty($vehicule["img$i"]))
                             <div class="col-md-4">
-                                <img src="{{ asset('storage/' . $annonce["img$i"]) }}" class="img-thumbnail miniature"
+                                <img src="{{ asset('storage/' . $vehicule["img$i"]) }}" class="img-thumbnail miniature"
                                     alt="...">
                             </div>
                         @endif
@@ -20,20 +20,21 @@
             </div>
             <div class="col-md-6">
                 <h3>Description</h3>
-                <p>{{ $annonce->marque }} {{ $annonce->model }} <br>
-                    Année {{ $annonce->annee }} <br>
-                    {{ $annonce->km }} km <br>
-                    {{ $annonce->energie }} <br>
-                <div class="container">{{ $annonce->description }}</div>
+                <p>{{ $vehicule->marque }} {{ $vehicule->model }} <br>
+                    Année {{ $vehicule->annee }} <br>
+                    {{ $vehicule->km }} km <br>
+                    {{ $vehicule->energie }} <br>
+                <div class="container">{{ $vehicule->description }}</div>
                 <br>
 
-                Prix: <span class="text-primary">{{ $annonce->prix }}</span> € <br>
+                Prix: <span class="text-primary">{{ $vehicule->prix }}</span> € <br>
                 </p>
 
                 <h3>Disponible de suite</h3>
                 <p>Le prix ne comprend pas les frais de la carte grise et de la mise en service</p>
             </div>
         </div>
+        <a href="{{ route('pages.contactAnnonceForm', ['id' => $vehicule->id]) }}" class="btn btn-primary">Contacter</a>
         <a href="/allAnnonce" class="btn btn-primary">Retour aux annonces</a>
     </div>
 
