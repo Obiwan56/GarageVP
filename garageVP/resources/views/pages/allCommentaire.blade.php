@@ -7,23 +7,6 @@
         </div>
     </div>
 
-    {{-- <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Trier par</option>
-                    <option value="1">Prénom de A à Z</option>
-                    <option value="2">Prénom de Z à A</option>
-                    <option value="3">Dernier commentaires</option>
-                    <option value="3">Premier commentaires</option>
-                </select>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-primary">Filtrer</button>
-            </div>
-        </div>
-    </div> --}}
-
     <div class="container p-4">
         <table class="table table-striped" id="tablCom">
             <caption class="caption">Tous les commentaires</caption>
