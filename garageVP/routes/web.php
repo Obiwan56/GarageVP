@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FiltreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SeviceController;
 use App\Http\Controllers\UserController;
@@ -37,6 +38,10 @@ Route::post('/contact', [ContactController::class, 'contact']);
 Route::get('/contact-annonce/{id}/form', [ContactController::class, 'formContactAnnonce'])->name('pages.contactAnnonceForm');
 Route::get('/annonce/{id}', [ContactController::class, 'formContactAnnonce'])->name('pages.detailAnnonce');
 Route::post('/contact-annonce/{id}', [ContactController::class, 'contactAnnonce'])->name('contactAnnonce');
+
+
+Route::post('/filtrer-vehicules', [FiltreController::class, 'filtrer'])->name('filtrer.vehicules');
+
 
 
 

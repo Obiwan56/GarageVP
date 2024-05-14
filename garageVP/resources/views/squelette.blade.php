@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta name="description"
         content="Garage Automobile VP propose des services de réparation et d'entretien pour tous types de véhicules. Spécialistes en mécanique, carrosserie et diagnostic électronique. Contactez-nous dès maintenant pour prendre rendez-vous!">
     <meta name="keywords"

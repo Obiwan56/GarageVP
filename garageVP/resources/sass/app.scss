@@ -120,4 +120,8 @@ footer.footer {
     /* Curseur pointeur au survol */
 }
 
+.carousel-item img {
+    height: 200px; /* Définissez la hauteur souhaitée pour vos images */
+    object-fit: cover; /* Assure que l'image couvre la hauteur spécifiée */
+}
 

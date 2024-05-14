@@ -27,7 +27,7 @@
                 <div class="container">{{ $vehicule->description }}</div>
                 <br>
 
-                Prix: <span class="text-primary">{{ $vehicule->prix }}</span> € <br>
+                Prix: <span class="text-primary fs-1 fw-bold">{{ $vehicule->prix }}</span> € <br>
                 </p>
 
                 <h3>Disponible de suite</h3>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\User2Request;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -41,13 +42,12 @@ class UserController extends Controller
         return view('pages.gestion.modifEmploye', compact('users'));
     }
 
-    public function modifUser(UserRequest $request)
+    public function modifUser(User2Request $request)
     {
         $user = User::find($request->id);
         $user->name = $request->name;
         $user->prenom = $request->prenom;
         $user->role = $request->role;
-        $user->email = $request->email;
 
         $user->update();
 
