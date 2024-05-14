@@ -70,6 +70,7 @@
                                             </li>
                                             <li><a class="dropdown-item" href="/gestionEmploye">Gestion employé</a></li>
                                             <li><a class="dropdown-item" href="/gestionService">Gestion services</a></li>
+                                            <li><a class="dropdown-item" href="/gestionHoraire">Gestion horaires</a></li>
                                         @endif
                                     @endauth
 
@@ -124,10 +125,13 @@
             <div class="row">
                 <div class="col-12 col-md-4">
                     <h3 class="text-primary">Nos horaires</h3>
-                    <div>
-                        <p>Du lundi au vendredi 08h45-12h00 14h00-18h00</p>
-                        <p>Le samedi 08h45-12h00</p>
-                    </div>
+                    @foreach ($horaires as $horaire)
+                        <div>
+                            <p>{{ $horaire->Hsemaine }}</p>
+                            <p>{{ $horaire->Hsamedi }}</p>
+                        </div>
+                    @endforeach
+
                 </div>
                 <div class="col-6 col-lg-4">
                     <p>Garage V. Parrot <br />

@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FiltreController;
+use App\Http\Controllers\HoraireController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SeviceController;
 use App\Http\Controllers\UserController;
@@ -68,8 +69,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/modifService/{id}', [SeviceController::class, 'formModifService']);
     Route::post('/modifService/{id}', [SeviceController::class, 'modifService']);
     Route::get('/effacerService/{id}', [SeviceController::class, 'deleteService']);
-});
 
+    Route::get('/gestionHoraire', [HoraireController::class, 'listeHoraire']);
+    Route::get('/formModifHoraire/{id}', [HoraireController::class, 'formModifHoraire']);
+    Route::post('/formModifHoraire/{id}', [HoraireController::class, 'modifHoraire']);
+});
 
 Route::middleware(['auth'])->group(function () {
 

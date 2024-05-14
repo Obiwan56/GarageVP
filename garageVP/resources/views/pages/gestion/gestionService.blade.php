@@ -11,11 +11,8 @@
         @endif
     </div>
 
-    <div class="p-4">
-
-
-
-        <div class="container p-4">
+    <div class="container">
+        <div class="col-xl">
 
             <div>
                 <a href="/ajoutService">Ajouter un service <i class="bi bi-plus-lg icon2 m-4"></i></a>
@@ -23,6 +20,13 @@
 
             <table class="table table-striped" id="tablCom">
                 <caption class="caption">Liste des service</caption>
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Contenu</th>
+                        <th></th>
+                    </tr>
+                </thead>
                 <tbody>
                     @foreach ($services as $service)
                         <tr>
@@ -59,12 +63,9 @@
                         </div>
                     @endforeach
                 </tbody>
+
             </table>
         </div>
+
     </div>
-
-
 @endsection
-
-
-
