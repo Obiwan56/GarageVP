@@ -20,7 +20,6 @@
                 <h3>{{ $vehicule->km }} km</h3>
             </div>
 
-            <!-- Champs du formulaire de contact -->
             <div class="mb-3">
                 <label for="name" class="form-label">Votre nom</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">

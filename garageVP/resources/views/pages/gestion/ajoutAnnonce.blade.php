@@ -72,7 +72,6 @@
                 <label for="boite" class="form-label">Boîte de vitesses</label>
                 <select id="boite" class="form-select" name="boite" value="{{ old('boite') }}">
                     <option selected disabled value="">Choisir</option>
-
                     <option value="automatique" {{ old('boite') == 'automatique' ? 'selected' : '' }}>automatique</option>
                     <option value="manuelle" {{ old('boite') == 'manuelle' ? 'selected' : '' }}>manuelle</option>
                 </select>

@@ -9,54 +9,28 @@
         </div>
     </div>
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <div id="filtre-vehicules" data-url="{{ route('filtrer.vehicules') }}"></div>
+    <div class="container mt-4 mb-4">
+        <form action="{{ route('filtrerAnnonces') }}" method="GET">
+          <div class="row">
+            <div class="col-md-4 mb-2">
+              <label for="min_km" class="form-label">Kilométrage minimum (km)</label>
+              <input type="number" class="form-control" id="min_km" name="min_km">
+            </div>
+            <div class="col-md-4 mb-2">
+              <label for="max_prix" class="form-label">Prix maximum (€)</label>
+              <input type="number" class="form-control" id="max_prix" name="max_prix">
+            </div>
+            <div class="col-md-4 mb-2">
+              <label for="annee" class="form-label">Année</label>
+              <input type="number" class="form-control" id="annee" name="annee">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mt-2">Filtrer</button>
+        </form>
+      </div>
 
     <div class="container-fluid mt-4">
-        <div class="row mb-3">
-            <div class="col-md-4">
-                <label for="km" class="form-label">Filtrer par kilométrage :</label>
-                <select class="form-select" id="km" name="km">
-                    <option value="">Tous les kilométrages</option>
-                    <option value="0-10000">Moins de 10 000 km</option>
-                    <option value="10000-30000">10 000 - 30 000 km</option>
-                    <option value="30000-50000">30 000 - 50 000 km</option>
-                    <option value="50000-100000">50 000 - 100 000 km</option>
-                    <option value="100000-200000">100 000 - 200 000 km</option>
-                    <option value="200000-500000">200 000 - 500 000 km</option>
-                    <option value="500000-1000000">500 000 - 1 000 000 km</option>
-                </select>
-            </div>
-
-            <div class="col-md-4">
-                <label for="annee" class="form-label">Filtrer par année :</label>
-                <select class="form-select" id="annee" name="annee">
-                    <option value="">Toutes les années</option>
-                    <option value="2020-2025">de 2020 à 2025</option>
-                    <option value="2015-2020">de 2015 à 2020</option>
-                    <option value="2010-2015">de 2010 à 2015</option>
-                    <option value="2005-2010">de 2005 à 2010</option>
-                    <option value="2000-2005">de 2000 à 2005</option>
-                    <option value="1960-2000">de 1960 à 2000</option>
-                </select>
-            </div>
-
-            <div class="col-md-4">
-                <label for="prix" class="form-label">Filtrer par prix :</label>
-                <select class="form-select" id="prix" name="prix">
-                    <option value="">Tous les prix</option>
-                    <option value="0-10000">Moins de 10 000 €</option>
-                    <option value="10000-20000">10 000 - 20 000 €</option>
-                    <option value="20000-30000">20 000 - 30 000 €</option>
-                    <option value="30000-40000">30 000 - 40 000 €</option>
-                    <option value="40000-50000">40 000 - 50 000 €</option>
-                </select>
-            </div>
-        </div>
-
-
-
         <div class="container-fluid mt-4">
             <div id="annonces-container"
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 justify-content-center">
@@ -107,12 +81,7 @@
                     </div>
                 @endforeach
 
-
-
             </div>
         </div>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-        <script src="{{ asset('js/filtre.js') }}"></script>
-    @endsection
+    </div>
+@endsection

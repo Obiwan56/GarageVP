@@ -2,43 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Vehicule;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
 
 class FiltreController extends Controller
 {
-
-    public function filtrer(Request $request)
+    public function filtrerAnnonces(Request $request)
     {
-        // Récupérer les paramètres de filtrage depuis la requête
-        $km = $request->input('km');
-        $annee = $request->input('annee');
-        $prix = $request->input('prix');
+      $minKm = $request->query('min_km', null);
+      $maxPrix = $request->query('max_prix', null);
+      $annee = $request->query('annee', null);
 
-        // Filtrer les véhicules en fonction des paramètres
-        $vehicules = Vehicule::query();
+      $annonces = Vehicule::query();
 
-        if (!empty($km)) {
-            $kmRange = explode('-', $km);
-            $vehicules->whereBetween('km', [$kmRange[0], $kmRange[1]]);
-        }
+      // Filtrer par kilométrage
+      if ($minKm) {
+        $annonces->where('km', '>=', $minKm);
+      }
 
-        if (!empty($annee)) {
-            $anneeRange = explode('-', $annee);
-            $vehicules->whereBetween('annee', [$anneeRange[0], $anneeRange[1]]);
-        }
+      // Filtrer par prix
+      if ($maxPrix) {
+        $annonces->where('prix', '<=', $maxPrix);
+      }
 
-        if (!empty($prix)) {
-            $prixRange = explode('-', $prix);
-            $vehicules->whereBetween('prix', [$prixRange[0], $prixRange[1]]);
-        }
+      // Filtrer par année
+      if ($annee) {
+        $annonces->where('annee', $annee);
+      }
 
-        // Récupérer les véhicules filtrés
-        $resultats = $vehicules->get();
+      $annonces = $annonces->get();
 
-        // Retourner les résultats
-        return response()->json($resultats);
+      // Renvoyer les annonces filtrées à la vue
+      return view('.pages.annonceFiltree', compact('annonces'));
     }
+
 }

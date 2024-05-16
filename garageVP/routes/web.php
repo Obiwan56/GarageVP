@@ -40,17 +40,14 @@ Route::get('/contact-annonce/{id}/form', [ContactController::class, 'formContact
 Route::get('/annonce/{id}', [ContactController::class, 'formContactAnnonce'])->name('pages.detailAnnonce');
 Route::post('/contact-annonce/{id}', [ContactController::class, 'contactAnnonce'])->name('contactAnnonce');
 
-
-Route::post('/filtrer-vehicules', [FiltreController::class, 'filtrer'])->name('filtrer.vehicules');
-
-
-
-
 Route::get('/deconnexion', [UserController::class, 'deconnexion']);
 
 Route::get('/allAnnonce', [VehiculeController::class, 'allAnnonce']);
 
 Route::get('/detailAnnonce/{id}', [VehiculeController::class, 'detail']);
+
+Route::get('/filtrer-annonces', [FiltreController::class, 'filtrerAnnonces'])->name('filtrerAnnonces');
+
 
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
