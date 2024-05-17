@@ -98,12 +98,14 @@
                     <span class="text-danger"> {{ $message }}</span>
                 @enderror
                 <br>
+
                 <label for="img2">2e Photo véhicule</label>
                 <input type="file" name="img2" id="img2" class="form-control">
 
                 @error('img2')
                     <span class="text-danger"> {{ $message }}</span>
                 @enderror
+                <br>
 
                 <label for="img3">3e Photo véhicule</label>
                 <input type="file" name="img3" id="img3" class="form-control">
@@ -111,6 +113,7 @@
                 @error('img3')
                     <span class="text-danger"> {{ $message }}</span>
                 @enderror
+                <br>
 
                 <label for="img4">4e Photo véhicule</label>
                 <input type="file" name="img4" id="img4" class="form-control">
@@ -118,6 +121,7 @@
                 @error('img4')
                     <span class="text-danger"> {{ $message }}</span>
                 @enderror
+                <br>
 
                 <label for="img5">5e Photo véhicule</label>
                 <input type="file" name="img5" id="img5" class="form-control">
@@ -125,6 +129,7 @@
                 @error('img5')
                     <span class="text-danger"> {{ $message }}</span>
                 @enderror
+                <br>
 
                 <label for="img6">6e Photo véhicule</label>
                 <input type="file" name="img6" id="img6" class="form-control">
@@ -132,6 +137,7 @@
                 @error('img6')
                     <span class="text-danger"> {{ $message }}</span>
                 @enderror
+                <br>
 
                 <label for="img7">7e Photo véhicule</label>
                 <input type="file" name="img7" id="img7" class="form-control">
@@ -139,6 +145,7 @@
                 @error('img7')
                     <span class="text-danger"> {{ $message }}</span>
                 @enderror
+                <br>
 
                 <label for="img8">8e Photo véhicule</label>
                 <input type="file" name="img8" id="img8" class="form-control">
@@ -146,6 +153,7 @@
                 @error('img8')
                     <span class="text-danger"> {{ $message }}</span>
                 @enderror
+                <br>
 
                 <label for="img9">9e Photo véhicule</label>
                 <input type="file" name="img9" id="img9" class="form-control">
@@ -153,6 +161,7 @@
                 @error('img9')
                     <span class="text-danger"> {{ $message }}</span>
                 @enderror
+                <br>
 
                 <label for="img10">10e Photo véhicule</label>
                 <input type="file" name="img10" id="img10" class="form-control">

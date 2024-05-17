@@ -38,8 +38,6 @@
                                     data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->prenom }}</span>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="/deconnexion">Déconnexion</a></li>
-                                    {{-- <li><a class="dropdown-item" href="{{ route('reset-password') }}">Modification mdp</a>
-                                    </li> --}}
                                 </ul>
                             </li>
 
@@ -52,7 +50,7 @@
 
 
                         @auth
-                            <li class="nav-item dropdown"><!--chemin vers la boite mail-->
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     Gestion

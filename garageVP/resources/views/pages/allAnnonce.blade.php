@@ -15,15 +15,15 @@
           <div class="row">
             <div class="col-md-4 mb-2">
               <label for="min_km" class="form-label">Kilométrage minimum (km)</label>
-              <input type="number" class="form-control" id="min_km" name="min_km">
+              <input type="number" class="form-control" id="min_km" name="min_km" value="{{ old('min_km') }}">
             </div>
             <div class="col-md-4 mb-2">
               <label for="max_prix" class="form-label">Prix maximum (€)</label>
-              <input type="number" class="form-control" id="max_prix" name="max_prix">
+              <input type="number" class="form-control" id="max_prix" name="max_prix" value="{{ old('max_prix') }}">
             </div>
             <div class="col-md-4 mb-2">
               <label for="annee" class="form-label">Année</label>
-              <input type="number" class="form-control" id="annee" name="annee">
+              <input type="number" class="form-control" id="annee" name="annee" value="{{ old('annee') }}">
             </div>
           </div>
           <button type="submit" class="btn btn-primary mt-2">Filtrer</button>

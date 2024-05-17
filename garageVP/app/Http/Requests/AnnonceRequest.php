@@ -25,10 +25,10 @@ class AnnonceRequest extends FormRequest
             'marque' => 'required',
             'model' => 'required',
             'annee' => 'required|numeric|digits:4',
-            'km' => 'required|numeric',
+            'km' => 'required|between:1,9999999|numeric',
             'description' => 'required|max:2000',
             'energie' => 'required',
-            'prix' => 'required|between:1,7',
+            'prix' => 'required|between:1,9999999|numeric',
             'boite' => 'required',
 
             'img1' => 'required|image|max:2000',  //'nullable|file|max:2000|required|mimes:png,jpg,jpeg'
@@ -54,18 +54,19 @@ class AnnonceRequest extends FormRequest
             'annee.digits' => "Une année à 4 chiffres svp",
 
             'km.required' => 'Le kilometrage est requis',
-            'km.between' => 'Erreur de kilometre',
             'km.numeric' => 'Entrer un kilometrage valide',
+            'km.between' => 'Maximum 9 999 999 de km',
 
             'boite.required' => 'Le type de boîte de vitesse est requise',
 
             'description.required' => 'La description est requise',
             'description.max' => '2000 caractères maximum',
 
-            'energie.required' => "Veuyez choisir un carburant",
+            'energie.required' => "Veuillez choisir un carburant",
 
             'prix.required' => 'Le prix est requis',
-            'prix.between' => "Ce n'est pas un avion...",
+            'prix.between' => "Prix maximum autorisé 9 999 999€",
+            'prix.numeric' => "Entrer un prix valide",
 
             'img1.required' => 'Une image est requise',
             'img2.required' => 'Une image est requise',
@@ -94,6 +95,3 @@ class AnnonceRequest extends FormRequest
         ];
     }
 }
-
-
-// verifier pb km
