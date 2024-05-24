@@ -12,6 +12,14 @@
     </div>
 
     <div class="p-4">
+        @if (session('message'))
+            <div class="alert alert-danger m-4">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
+
+    <div class="p-4">
         <div class="container p-4">
             <table class="table table-striped">
                 <thead>

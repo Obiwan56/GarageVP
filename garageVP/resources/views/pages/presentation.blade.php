@@ -6,6 +6,13 @@
             <h1 class="titre">Bienvenue au Garage Vincent Parrot</h1>
         </div>
     </div>
+    <div class="p-4">
+        @if (session('message'))
+            <div class="alert alert-danger m-4">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
 
     <div>
         <p class="presentation fs-4 p-4">

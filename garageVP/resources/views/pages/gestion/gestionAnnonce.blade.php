@@ -10,6 +10,13 @@
             </div>
         @endif
     </div>
+    <div class="p-4">
+        @if (session('message'))
+            <div class="alert alert-danger m-4">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
 
     <div class="p-4">
 

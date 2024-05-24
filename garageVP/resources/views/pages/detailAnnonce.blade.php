@@ -1,10 +1,18 @@
 @extends('squelette')
 
 @section('contenu')
+    <div class="p-4">
+        @if (session('message'))
+            <div class="alert alert-danger m-4">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
+
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="text-center">{{ $vehicule->marque }} {{ $vehicule->model }}</h1>
+                <h1 class="text-center fw-bold">{{ $vehicule->marque }} {{ $vehicule->model }}</h1>
                 <img id="imagePrincipale" src="{{ asset('storage/' . $vehicule->img1) }}" class="d-block w-100" alt="...">
                 <!-- Galerie d'images -->
                 <div class="row mt-3 galerie-images">
@@ -20,11 +28,12 @@
             </div>
             <div class="col-md-6">
                 <h3>Description</h3>
-                <p>{{ $vehicule->marque }} {{ $vehicule->model }} <br>
-                    Année {{ $vehicule->annee }} <br>
+                <h2 class="fw-bold">{{ $vehicule->marque }} {{ $vehicule->model }} </h2><br>
+                <div class="fw-bold"> Année {{ $vehicule->annee }} <br>
                     {{ $vehicule->km }} km <br>
                     {{ $vehicule->energie }} <br>
-                <div class="container">{{ $vehicule->description }}</div>
+                </div>
+                <div class="container pcarrosserie">{{ $vehicule->description }}</div>
                 <br>
 
                 Prix: <span class="text-primary fs-1 fw-bold">{{ $vehicule->prix }}</span> € <br>

@@ -1,6 +1,14 @@
 @extends('squelette')
 
 @section('contenu')
+    <div class="p-4">
+        @if (session('message'))
+            <div class="alert alert-danger m-4">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
+
     <div class="titre2 text-center text-primary">
         <div class="titre2-contenu">
             <h1 class="titre">Formulaire de contact</h1>

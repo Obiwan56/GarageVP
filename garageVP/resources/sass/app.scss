@@ -122,8 +122,9 @@ footer.footer {
 }
 
 .carousel-item img {
-    height: 200px; /* Définissez la hauteur souhaitée pour vos images */
-    object-fit: cover; /* Assure que l'image couvre la hauteur spécifiée */
+    height: 200px;
+    /* Définissez la hauteur souhaitée pour vos images */
+    object-fit: cover;
+    /* Assure que l'image couvre la hauteur spécifiée */
     border-radius: 5%;
 }
-
