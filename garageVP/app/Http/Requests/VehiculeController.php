@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Annonce2Request;
 use App\Http\Requests\AnnonceRequest;
 use App\Models\Vehicule;
 use Illuminate\Http\Request;
@@ -90,7 +89,7 @@ class VehiculeController extends Controller
         return view('pages.gestion.modifAnnonce', compact('annonces'));
     }
 
-    public function modifAnnonce($id, Annonce2Request $request)
+    public function modifAnnonce($id, AnnonceRequest $request)
     {
         // Récupérer l'annonce à modifier
         $annonce = Vehicule::findOrFail($id);

@@ -1,7 +1,7 @@
 @extends('squelette')
 
 @section('contenu')
-    <h1 class="text-primary text-center">Gestion des voitures en ventes</h1>
+    <h1 class="text-primary text-center p-4">Gestion des voitures en ventes</h1>
 
     <div class="p-4">
         @if (session('success'))
@@ -34,13 +34,13 @@
                     @foreach ($annonces as $annonce)
                         <tr>
                             <td>{{ $annonce->marque }}</td>
-                            <td>{{ $annonce->model }}</td>
+                            <td class="d-none d-lg-table-cell">{{ $annonce->model }}</td>
                             <td>{{ $annonce->annee }}</td>
                             <td>{{ $annonce->km }}</td>
-                            <td>{{ $annonce->description }}</td>
-                            <td>{{ $annonce->energie }}</td>
-                            <td>{{ $annonce->boite }}</td>
-                            <td>{{ $annonce->prix }}</td>
+                            <td class="d-none d-lg-table-cell">{{ $annonce->description }}</td>
+                            <td class="d-none d-lg-table-cell">{{ $annonce->energie }}</td>
+                            <td class="d-none d-lg-table-cell">{{ $annonce->boite }}</td>
+                            <td class="d-none d-lg-table-cell">{{ $annonce->prix }}</td>
 
                             <td>
                                 <a href="/modifAnnonce/{{ $annonce->id }}" class="btn btn-primary">Modifier</a>

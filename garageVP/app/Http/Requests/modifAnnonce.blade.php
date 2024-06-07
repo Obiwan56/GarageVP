@@ -97,7 +97,7 @@
                 <input type="file" name="img1" id="img1" class="form-control">
                 <input type="hidden" name="img1_old" value="{{ $annonces->img1 }}">
                 @if ($annonces->img1)
-                    <img src="{{ asset($annonces->img1) }}" alt="" style="max-width: 150px;">
+                    <img src="{{ asset('storage/' . $annonces->img1) }}" alt="" style="max-width: 150px;">
                 @endif
                 @error('img1')
                     <span class="text-danger">{{ $message }}</span>
@@ -109,7 +109,7 @@
                 <input type="file" name="img2" id="img2" class="form-control">
                 <input type="hidden" name="img2_old" value="{{ $annonces->img2 }}">
                 @if ($annonces->img2)
-                    <img src="{{ asset($annonces->img2) }}" alt="" style="max-width: 150px;">
+                    <img src="{{ asset('storage/' . $annonces->img2) }}" alt="" style="max-width: 150px;">
                 @endif
                 @error('img2')
                     <span class="text-danger">{{ $message }}</span>
@@ -121,7 +121,7 @@
                 <input type="file" name="img3" id="img3" class="form-control">
                 <input type="hidden" name="img3_old" value="{{ $annonces->img3 }}">
                 @if ($annonces->img3)
-                    <img src="{{ asset($annonces->img3) }}" alt="" style="max-width: 150px;">
+                    <img src="{{ asset('storage/' . $annonces->img3) }}" alt="" style="max-width: 150px;">
                 @endif
                 @error('img3')
                     <span class="text-danger">{{ $message }}</span>
@@ -133,7 +133,7 @@
                 <input type="file" name="img4" id="img4" class="form-control">
                 <input type="hidden" name="img4_old" value="{{ $annonces->img4 }}">
                 @if ($annonces->img4)
-                    <img src="{{ asset($annonces->img4) }}" alt="" style="max-width: 150px;">
+                    <img src="{{ asset('storage/' . $annonces->img4) }}" alt="" style="max-width: 150px;">
                 @endif
                 @error('img4')
                     <span class="text-danger">{{ $message }}</span>
@@ -145,7 +145,7 @@
                 <input type="file" name="img5" id="img5" class="form-control">
                 <input type="hidden" name="img5_old" value="{{ $annonces->img5 }}">
                 @if ($annonces->img5)
-                    <img src="{{ asset($annonces->img5) }}" alt="" style="max-width: 150px;">
+                    <img src="{{ asset('storage/' . $annonces->img5) }}" alt="" style="max-width: 150px;">
                 @endif
                 @error('img5')
                     <span class="text-danger">{{ $message }}</span>
@@ -157,7 +157,7 @@
                 <input type="file" name="img6" id="img6" class="form-control">
                 <input type="hidden" name="img6_old" value="{{ $annonces->img6 }}">
                 @if ($annonces->img6)
-                    <img src="{{ asset($annonces->img6) }}" alt="" style="max-width: 150px;">
+                    <img src="{{ asset('storage/' . $annonces->img6) }}" alt="" style="max-width: 150px;">
                 @endif
                 @error('img6')
                     <span class="text-danger">{{ $message }}</span>
@@ -169,7 +169,7 @@
                 <input type="file" name="img7" id="img7" class="form-control">
                 <input type="hidden" name="img7_old" value="{{ $annonces->img7 }}">
                 @if ($annonces->img7)
-                    <img src="{{ asset($annonces->img7) }}" alt="" style="max-width: 150px;">
+                    <img src="{{ asset('storage/' . $annonces->img7) }}" alt="" style="max-width: 150px;">
                 @endif
                 @error('img7')
                     <span class="text-danger">{{ $message }}</span>
@@ -181,7 +181,7 @@
                 <input type="file" name="img8" id="img8" class="form-control">
                 <input type="hidden" name="img8_old" value="{{ $annonces->img8 }}">
                 @if ($annonces->img8)
-                    <img src="{{ asset($annonces->img8) }}" alt="" style="max-width: 150px;">
+                    <img src="{{ asset('storage/' . $annonces->img8) }}" alt="" style="max-width: 150px;">
                 @endif
                 @error('img8')
                     <span class="text-danger">{{ $message }}</span>
@@ -193,7 +193,7 @@
                 <input type="file" name="img9" id="img9" class="form-control">
                 <input type="hidden" name="img9_old" value="{{ $annonces->img9 }}">
                 @if ($annonces->img9)
-                    <img src="{{ asset($annonces->img9) }}" alt="" style="max-width: 150px;">
+                    <img src="{{ asset('storage/' . $annonces->img9) }}" alt="" style="max-width: 150px;">
                 @endif
                 @error('img9')
                     <span class="text-danger">{{ $message }}</span>
@@ -205,7 +205,7 @@
                 <input type="file" name="img10" id="img10" class="form-control">
                 <input type="hidden" name="img10_old" value="{{ $annonces->img10 }}">
                 @if ($annonces->img10)
-                    <img src="{{ asset($annonces->img10) }}" alt="" style="max-width: 150px;">
+                    <img src="{{ asset('storage/' . $annonces->img10) }}" alt="" style="max-width: 150px;">
                 @endif
                 @error('img10')
                     <span class="text-danger">{{ $message }}</span>
