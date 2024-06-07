@@ -50,15 +50,15 @@
                                 data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active" data-bs-interval="10000">
-                                        <img src="{{ asset('storage/' . $annonce->img1) }}" class="d-block w-100"
+                                        <img src="{{ asset('public/' . $annonce->img1) }}" class="d-block w-100"
                                             alt="">
                                     </div>
                                     <div class="carousel-item" data-bs-interval="10000">
-                                        <img src="{{ asset('storage/' . $annonce->img2) }}" class="d-block w-100"
+                                        <img src="{{ asset('public/' . $annonce->img2) }}" class="d-block w-100"
                                             alt="">
                                     </div>
                                     <div class="carousel-item" data-bs-interval="10000">
-                                        <img src="{{ asset('storage/' . $annonce->img3) }}" class="d-block w-100"
+                                        <img src="{{ asset('public/' . $annonce->img3) }}" class="d-block w-100"
                                             alt="">
                                     </div>
                                 </div>

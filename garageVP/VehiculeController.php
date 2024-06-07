@@ -18,7 +18,7 @@ class VehiculeController extends Controller
         for ($i = 1; $i <= 10; $i++) {
             $imgField = "img$i"; // Générer dynamiquement le nom du champ d'image
             if ($request->hasFile($imgField)) {
-                $imgChemins[$i - 1] = $request->file($imgField)->store('public/annonceImg', 'public');
+                $imgChemins[$i - 1] = $request->file($imgField)->store('annonceImg', 'public');
             } else {
                 $imgChemins[$i - 1] = ''; // Assigner une chaîne vide si aucune image n'est téléchargée
             }
