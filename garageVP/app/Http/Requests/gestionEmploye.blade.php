@@ -24,7 +24,7 @@
                         <th scope>Email</th>
                         <th scope class="d-none d-lg-table-cell">Nom</th>
                         <th scope class="d-none d-lg-table-cell">Prénom</th>
-                        <th scope class="d-none d-sm-table-cell">Role</th>
+                        <th scope>Role</th>
                         <th scope>Actions</th>
                     </tr>
                 </thead>
@@ -32,9 +32,9 @@
                     @foreach ($users as $user)
                         <tr>
                             <td>{{ $user->email }}</td>
-                            <td class="d-none d-lg-table-cell">{{ $user->nom }}</td>
+                            <td class="d-none d-lg-table-cell">{{ $user->name }}</td>
                             <td class="d-none d-lg-table-cell">{{ $user->prenom }}</td>
-                            <td class="d-none d-sm-table-cell">{{ $user->role }}</td>
+                            <td>{{ $user->role }}</td>
                             <td>
                                 <a href="/modifEmploye/{{ $user->id }}" class="btn btn-primary">Modifier</a>
                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal"
