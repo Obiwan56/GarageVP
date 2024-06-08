@@ -25,7 +25,7 @@ class ServiceRequest extends FormRequest
             'titre' => 'required|min:2|max:50',
             'texte' => 'required|min:2|max:5000',
 
-            'image' => 'required|file|max:2000',  //'nullable|file|max:2000|required|mimes:png,jpg,jpeg'
+            'image' => 'nullable|file|max:2000',  //'nullable|file|max:2000|required|mimes:png,jpg,jpeg'
 
         ];
     }

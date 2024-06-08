@@ -28,7 +28,7 @@
                 <tr>
                     <th scope="col">Nom</th>
                     <th scope="col">Commentaire</th>
-                    <th scope="col" class="d-none d-sm-table-cell">note</th>
+                    <th scope="col">note</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -37,7 +37,7 @@
                     <tr>
                         <td>{{ $com->name }}</td>
                         <td>{{ $com->commentaire }}</td>
-                        <td class="d-none d-sm-table-cell">{{ $com->note }}</td>
+                        <td>{{ $com->note }}</td>
                         <td>
                             <a href="/aprouvCom/{{ $com->id }}" class="btn btn-primary">Approuver</a>
                             <button type="button" class="btn btn-warning" data-bs-toggle="modal"
