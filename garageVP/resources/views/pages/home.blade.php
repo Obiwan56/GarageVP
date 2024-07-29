@@ -70,7 +70,7 @@
                         @endif
                     </tbody>
                 </table>
-                </div">
+                </div>
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <a href="/formCommentaire" class="btn btn-primary mb-3 btn-block">Laissez-nous votre témoignage,
